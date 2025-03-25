@@ -1,4 +1,9 @@
-#TODO (Kyle Efondo): Get product name, price & quantity 
+def get_order():
+    product_name = input("\nEnter product name: ")
+    price = float(input("Enter price: "))
+    quantity = int(input("Enter quantity: "))
+
+    return [product_name, price, quantity]
  
 #TODO (Jakim Lopez): Get name & senior id
 
