@@ -10,7 +10,7 @@ def get_order():
  
 def get_customer_details():
     customer_name = input("\nEnter customer name: ")
-    senior_id = input("Enter senior ID number (leave blank if none): ")
+    senior_id = input("Enter senior ID number (leave blank if none): ").strip()
     
     return [customer_name, senior_id]
 
