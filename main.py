@@ -1,3 +1,6 @@
+CONTINUE_OPTION = 'y'
+EXIT_OPTION = 'n'
+
 def get_order():
     product_name = input("\nEnter product name: ")
     price = float(input("Enter price: "))
@@ -37,4 +40,16 @@ def display_order(order_list, customer_name, senior_id, grand_total):
 
     print(f"\nGrand Total: {grand_total}")
 
-#TODO (Miko Causon): Call functions in order & manage program flow
+def main():
+    order_list = []
+    choice = CONTINUE_OPTION
+    
+    while choice == CONTINUE_OPTION:
+        order_list.append(get_order())
+        choice = input("Add another item? (y/n): ").lower()
+    
+    customer_name, senior_id = get_customer_details()
+    grand_total = compute_total(order_list, senior_id)
+    display_order(order_list, customer_name, senior_id, grand_total)
+    
+main()
