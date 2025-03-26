@@ -40,6 +40,14 @@ def display_order(order_list, customer_name, senior_id, grand_total):
 
     print(f"\nGrand Total: {grand_total}")
 
+def evaluate_choice(choice):
+    if choice == CONTINUE_OPTION or choice == EXIT_OPTION:
+        return choice
+    
+    print("Not a valid choice.")
+    choice = input("Add another item? (y/n): ")
+    choice = evaluate_choice(choice)
+
 def main():
     order_list = []
     choice = CONTINUE_OPTION
@@ -47,6 +55,7 @@ def main():
     while choice == CONTINUE_OPTION:
         order_list.append(get_order())
         choice = input("Add another item? (y/n): ").lower()
+        choice = evaluate_choice(choice)
     
     customer_name, senior_id = get_customer_details()
     grand_total = compute_total(order_list, senior_id)
