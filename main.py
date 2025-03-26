@@ -5,7 +5,11 @@ def get_order():
 
     return [product_name, price, quantity]
  
-#TODO (Jakim Lopez): Get name & senior id
+def get_customer_details():
+    customer_name = input("\nEnter customer name: ")
+    senior_id = input("Enter senior ID number (leave blank if none): ")
+    
+    return [customer_name, senior_id]
 
 #TODO (Hanz Gagtan): Compute grand total & apply discount if senior ID is given
 
