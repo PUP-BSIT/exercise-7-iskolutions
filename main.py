@@ -21,6 +21,20 @@ def compute_total(order_list, senior_id):
     
     return total
 
-#TODO (Pearl Franco): Display inputs & total, apply discount if senior  
+def display_order(order_list, customer_name, senior_id, grand_total):
+    print("\nOrder Details:\n")
+    for order in order_list:
+        print(f"Item:\t\t{order[0]}")
+        print(f"Price:\t\t{order[1]}")
+        print(f"Quantity:\t{order[2]}")
+        print(f"Total:\t\t{order[1] * order[2]}\n")
+
+    print(f"\nCustomer Name: {customer_name}")
+    print(f"Senior ID: {senior_id}")
+    
+    if senior_id:
+        print("A 10% senior discount has been applied.")
+
+    print(f"\nGrand Total: {grand_total}")
 
 #TODO (Miko Causon): Call functions in order & manage program flow
